@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>桃園市潮音國小 115 學年度二年級教科書版本一覽</title>
+    <title>桃園市潮音國小 115 學年度二年級重點科目教科書版本</title>
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -25,12 +25,6 @@
             
             --color-nani: #34d399; /* Green for 南一 */
             --color-nani-glow: rgba(52, 211, 153, 0.15);
-            
-            --color-zhenping: #fb923c; /* Orange for 真平 */
-            --color-zhenping-glow: rgba(251, 146, 60, 0.15);
-
-            --color-none: #64748b; /* Grey for None */
-            --color-none-glow: rgba(100, 116, 139, 0.15);
         }
 
         * {
@@ -97,7 +91,7 @@
             animation: fadeInUp 1s ease-out;
         }
 
-        /* Dashboard Overview Grid */
+        /* Dashboard Overview Grid - Fixed 3 Columns */
         .overview-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -110,7 +104,7 @@
             background: var(--card-bg);
             border: 1px solid var(--card-border);
             border-radius: 20px;
-            padding: 1.5rem;
+            padding: 1.8rem;
             position: relative;
             overflow: hidden;
             backdrop-filter: blur(16px);
@@ -118,6 +112,7 @@
             display: flex;
             flex-direction: column;
             justify-content: space-between;
+            min-height: 250px;
         }
 
         .card:hover {
@@ -157,25 +152,6 @@
             background: var(--color-nani);
             box-shadow: 0 2px 10px var(--color-nani-glow);
         }
-        .card-zhenping::after {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 4px;
-            background: var(--color-zhenping);
-            box-shadow: 0 2px 10px var(--color-zhenping-glow);
-        }
-        .card-none::after {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 4px;
-            background: var(--color-none);
-        }
 
         .card-header {
             display: flex;
@@ -199,7 +175,7 @@
         }
 
         .subject-name {
-            font-size: 1.4rem;
+            font-size: 1.5rem;
             font-weight: 700;
             color: var(--text-primary);
         }
@@ -228,18 +204,6 @@
             background: var(--color-nani-glow);
             color: var(--color-nani);
             border: 1px solid rgba(52, 211, 153, 0.3);
-        }
-
-        .badge-zhenping {
-            background: var(--color-zhenping-glow);
-            color: var(--color-zhenping);
-            border: 1px solid rgba(251, 146, 60, 0.3);
-        }
-
-        .badge-none {
-            background: var(--color-none-glow);
-            color: var(--color-none);
-            border: 1px solid rgba(100, 116, 139, 0.3);
         }
 
         .card-body {
@@ -355,8 +319,8 @@
         <!-- Header -->
         <header>
             <div class="school-badge">桃園市大園區潮音國民小學</div>
-            <h1>115 學年度二年級教科書版本</h1>
-            <p class="subtitle">為「恩」精心整理的二年級所有科目版本與教材建議</p>
+            <h1>115 學年度二年級重點科目教材清單</h1>
+            <p class="subtitle">為「恩」精心整理的二年級必備額外教材科目版本（已忽略免額外教材學科）</p>
         </header>
 
         <!-- Subjects Grid -->
@@ -414,102 +378,12 @@
                     <a href="https://gooro.vip/" target="_blank" class="action-link">前往選購 →</a>
                 </div>
             </div>
-
-            <!-- 英語文 -->
-            <div class="card card-kanghsuan">
-                <div class="card-header">
-                    <div class="subject-info">
-                        <span class="subject-tag">彈性學習 / 語文延伸</span>
-                        <span class="subject-name">英語文</span>
-                    </div>
-                    <span class="publisher-badge badge-kanghsuan">康軒版</span>
-                </div>
-                <div class="card-body">
-                    低年級英語以日常會話與字母拼讀 (Phonics) 為主，加強聽力與口說表達。
-                </div>
-                <div class="card-footer">
-                    <span>依學校需求準備</span>
-                    <a href="https://gooro.vip/" target="_blank" class="action-link">前往選購 →</a>
-                </div>
-            </div>
-
-            <!-- 本土語文 - 閩南語 -->
-            <div class="card card-zhenping">
-                <div class="card-header">
-                    <div class="subject-info">
-                        <span class="subject-tag">語文領域 / 必選修</span>
-                        <span class="subject-name">本土語 - 閩南語</span>
-                    </div>
-                    <span class="publisher-badge badge-zhenping">真平版</span>
-                </div>
-                <div class="card-body">
-                    以生活情境台語對話、俗語及本土文化認同為主要學習方向。
-                </div>
-                <div class="card-footer">
-                    <span>免額外準備參考書</span>
-                    <a href="https://gooro.vip/" target="_blank" class="action-link">前往選購 →</a>
-                </div>
-            </div>
-
-            <!-- 本土語文 - 客家語 -->
-            <div class="card card-zhenping">
-                <div class="card-header">
-                    <div class="subject-info">
-                        <span class="subject-tag">語文領域 / 必選修</span>
-                        <span class="subject-name">本土語 - 客家語</span>
-                    </div>
-                    <span class="publisher-badge badge-zhenping">真平版</span>
-                </div>
-                <div class="card-body">
-                    以日常客語基礎問候、童謠及客家傳統文化認同為學習媒介。
-                </div>
-                <div class="card-footer">
-                    <span>免額外準備參考書</span>
-                    <a href="https://gooro.vip/" target="_blank" class="action-link">前往選購 →</a>
-                </div>
-            </div>
-
-            <!-- 健康與體育 -->
-            <div class="card card-kanghsuan">
-                <div class="card-header">
-                    <div class="subject-info">
-                        <span class="subject-tag">健體領域 / 必修</span>
-                        <span class="subject-name">健康與體育</span>
-                    </div>
-                    <span class="publisher-badge badge-kanghsuan">康軒版</span>
-                </div>
-                <div class="card-body">
-                    著重於日常健康習慣建立、疾病防治知識，以及基礎體能與大肌肉運動訓練。
-                </div>
-                <div class="card-footer">
-                    <span>免額外準備參考書</span>
-                    <a href="https://gooro.vip/" target="_blank" class="action-link">前往選購 →</a>
-                </div>
-            </div>
-
-            <!-- 綜合活動 & 資訊科技 -->
-            <div class="card card-none">
-                <div class="card-header">
-                    <div class="subject-info">
-                        <span class="subject-tag">其他領域</span>
-                        <span class="subject-name">綜合活動 / 資訊</span>
-                    </div>
-                    <span class="publisher-badge badge-none">無教科書</span>
-                </div>
-                <div class="card-body">
-                    低年級無獨立資訊科技課，綜合活動通常配合校內活動、彈性時間及班級常規進行。
-                </div>
-                <div class="card-footer">
-                    <span>無須選購教材</span>
-                    <a href="#" style="pointer-events: none; color: var(--text-secondary);" class="action-link">-</a>
-                </div>
-            </div>
         </div>
 
         <!-- Extra Note Section -->
         <div class="info-section">
             <h2 class="info-title">
-                💡 夠了教材顧問 (Gooro.vip) 的小提醒
+                💡 夠了教材顧問 (Gooro.vip) 的選書提醒
             </h2>
             <div class="info-content">
                 選購時切記依照<strong>「對應版本」</strong>選購，以下提供推薦的心得指引：
