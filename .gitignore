@@ -1,0 +1,17 @@
+# Windows thumbnail cache files
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+
+# Folder config file
+desktop.ini
+
+# Office temporary files
+~$*
+
+# Temporary files created by tools/AI
+.gemini/
+.agents/
+temp/
+tmp/
+*.tmp
