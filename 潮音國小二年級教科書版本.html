@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>桃園市潮音國小 115 學年度二年級重點科目教科書版本</title>
+    <title>桃園市潮音國小 115 學年度二年級重點科目教材統計表</title>
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -41,13 +41,13 @@
             display: flex;
             flex-direction: column;
             align-items: center;
-            padding: 2rem 1rem;
+            padding: 3rem 1rem;
             overflow-x: hidden;
         }
 
         .container {
             width: 100%;
-            max-width: 1000px;
+            max-width: 900px;
             margin: 0 auto;
         }
 
@@ -73,7 +73,7 @@
         }
 
         h1 {
-            font-size: 2.5rem;
+            font-size: 2.3rem;
             font-weight: 900;
             line-height: 1.2;
             background: linear-gradient(to right, #ffffff, #c084fc, #6366f1);
@@ -91,93 +91,56 @@
             animation: fadeInUp 1s ease-out;
         }
 
-        /* Dashboard Overview Grid - Fixed 3 Columns */
-        .overview-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 1.5rem;
-            margin-bottom: 3rem;
-        }
-
-        /* Custom Card Styles */
-        .card {
+        /* Table Card Container */
+        .table-container {
             background: var(--card-bg);
             border: 1px solid var(--card-border);
-            border-radius: 20px;
-            padding: 1.8rem;
-            position: relative;
-            overflow: hidden;
+            border-radius: 24px;
+            padding: 1.5rem;
             backdrop-filter: blur(16px);
-            transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
-            min-height: 250px;
+            box-shadow: 0 20px 45px rgba(0, 0, 0, 0.4);
+            overflow-x: auto;
+            margin-bottom: 2.5rem;
+            animation: fadeInUp 0.8s ease-out;
         }
 
-        .card:hover {
-            transform: translateY(-5px);
-            border-color: rgba(255, 255, 255, 0.2);
-            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
-        }
-
-        /* Card glowing effects depending on publisher */
-        .card-kanghsuan::after {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
+        table {
             width: 100%;
-            height: 4px;
-            background: var(--color-kanghsuan);
-            box-shadow: 0 2px 10px var(--color-kanghsuan-glow);
-        }
-        .card-hanlin::after {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 4px;
-            background: var(--color-hanlin);
-            box-shadow: 0 2px 10px var(--color-hanlin-glow);
-        }
-        .card-nani::after {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 4px;
-            background: var(--color-nani);
-            box-shadow: 0 2px 10px var(--color-nani-glow);
+            border-collapse: collapse;
+            text-align: left;
         }
 
-        .card-header {
-            display: flex;
-            justify-content: space-between;
-            align-items: flex-start;
-            margin-bottom: 1.5rem;
-        }
-
-        .subject-info {
-            display: flex;
-            flex-direction: column;
-        }
-
-        .subject-tag {
-            font-size: 0.75rem;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            color: var(--text-secondary);
-            font-weight: 500;
-            margin-bottom: 0.25rem;
-        }
-
-        .subject-name {
-            font-size: 1.5rem;
+        th {
+            padding: 1.2rem 1rem;
+            font-size: 0.95rem;
             font-weight: 700;
             color: var(--text-primary);
+            border-bottom: 2px solid rgba(255, 255, 255, 0.1);
+            letter-spacing: 0.5px;
+        }
+
+        td {
+            padding: 1.2rem 1rem;
+            font-size: 0.95rem;
+            color: var(--text-secondary);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+            vertical-align: middle;
+        }
+
+        tr:last-child td {
+            border-bottom: none;
+        }
+
+        tr:hover td {
+            color: #ffffff;
+            background: rgba(255, 255, 255, 0.02);
+            transition: all 0.2s ease;
+        }
+
+        .subject-col {
+            font-weight: 700;
+            color: #ffffff;
+            font-size: 1.1rem;
         }
 
         .publisher-badge {
@@ -185,6 +148,7 @@
             border-radius: 8px;
             font-size: 0.85rem;
             font-weight: 700;
+            display: inline-block;
             text-align: center;
         }
 
@@ -206,69 +170,77 @@
             border: 1px solid rgba(52, 211, 153, 0.3);
         }
 
-        .card-body {
-            font-size: 0.95rem;
-            color: var(--text-secondary);
-            line-height: 1.6;
-            margin-bottom: 1.5rem;
+        /* Checklist Items */
+        .book-list {
+            list-style: none;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
         }
 
-        .card-footer {
-            border-top: 1px solid rgba(255, 255, 255, 0.05);
-            padding-top: 1rem;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
+        .book-item {
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            padding: 0.25rem 0.75rem;
+            border-radius: 6px;
             font-size: 0.85rem;
-        }
-
-        .action-link {
-            color: #6366f1;
-            text-decoration: none;
-            font-weight: 500;
-            transition: color 0.2s ease;
-            display: flex;
+            color: #f8fafc;
+            display: inline-flex;
             align-items: center;
-            gap: 0.25rem;
+            gap: 0.3rem;
         }
 
-        .action-link:hover {
-            color: #818cf8;
+        .book-item::before {
+            content: "✓";
+            color: #34d399;
+            font-weight: bold;
         }
 
-        /* Interactive details section */
-        .info-section {
+        /* Summary Panel */
+        .summary-panel {
             background: rgba(255, 255, 255, 0.02);
             border: 1px solid rgba(255, 255, 255, 0.05);
-            border-radius: 24px;
-            padding: 2rem;
+            border-radius: 20px;
+            padding: 1.8rem;
             backdrop-filter: blur(20px);
-            margin-top: 2rem;
         }
 
-        .info-title {
-            font-size: 1.25rem;
+        .summary-title {
+            font-size: 1.15rem;
             font-weight: 700;
             margin-bottom: 1rem;
+            color: #f8fafc;
             display: flex;
             align-items: center;
             gap: 0.5rem;
-            color: #f8fafc;
         }
 
-        .info-content {
-            font-size: 0.95rem;
-            color: var(--text-secondary);
-            line-height: 1.7;
-        }
-
-        .info-list {
+        .summary-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1.2rem;
             margin-top: 1rem;
-            padding-left: 1.25rem;
         }
 
-        .info-list li {
-            margin-bottom: 0.5rem;
+        .summary-stat {
+            background: rgba(30, 41, 59, 0.5);
+            border: 1px solid rgba(255, 255, 255, 0.03);
+            border-radius: 12px;
+            padding: 1rem;
+            text-align: center;
+        }
+
+        .stat-value {
+            font-size: 1.6rem;
+            font-weight: 800;
+            color: #38bdf8;
+            margin-bottom: 0.25rem;
+            font-family: 'Outfit', sans-serif;
+        }
+
+        .stat-label {
+            font-size: 0.85rem;
+            color: var(--text-secondary);
         }
 
         footer {
@@ -283,34 +255,19 @@
 
         /* Animations */
         @keyframes fadeInDown {
-            from {
-                opacity: 0;
-                transform: translateY(-20px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
+            from { opacity: 0; transform: translateY(-20px); }
+            to { opacity: 1; transform: translateY(0); }
         }
 
         @keyframes fadeInUp {
-            from {
-                opacity: 0;
-                transform: translateY(20px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
         }
 
         @media (max-width: 768px) {
-            h1 {
-                font-size: 2rem;
-            }
-            body {
-                padding: 1.5rem 0.5rem;
-            }
+            h1 { font-size: 1.8rem; }
+            body { padding: 2rem 0.5rem; }
+            th, td { padding: 0.8rem 0.5rem; }
         }
     </style>
 </head>
@@ -319,85 +276,91 @@
         <!-- Header -->
         <header>
             <div class="school-badge">桃園市大園區潮音國民小學</div>
-            <h1>115 學年度二年級重點科目教材清單</h1>
-            <p class="subtitle">為「恩」精心整理的二年級必備額外教材科目版本（已忽略免額外教材學科）</p>
+            <h1>115 學年度二年級重點科目教材統計表</h1>
+            <p class="subtitle">為「恩」整理的二年級自購教材統計清單，方便核對購書項目</p>
         </header>
 
-        <!-- Subjects Grid -->
-        <div class="overview-grid">
-            <!-- 國語 -->
-            <div class="card card-kanghsuan">
-                <div class="card-header">
-                    <div class="subject-info">
-                        <span class="subject-tag">語文領域 / 必修主科</span>
-                        <span class="subject-name">國語文</span>
-                    </div>
-                    <span class="publisher-badge badge-kanghsuan">康軒版</span>
-                </div>
-                <div class="card-body">
-                    奠定低年級國語文字彙、造詞與閱讀基礎。小二生字量增加，首重識字率與閱讀習慣培養。
-                </div>
-                <div class="card-footer">
-                    <span>建議自修 + 評量</span>
-                    <a href="https://gooro.vip/" target="_blank" class="action-link">前往選購 →</a>
-                </div>
-            </div>
-
-            <!-- 數學 -->
-            <div class="card card-hanlin">
-                <div class="card-header">
-                    <div class="subject-info">
-                        <span class="subject-tag">數學領域 / 必修主科</span>
-                        <span class="subject-name">數學</span>
-                    </div>
-                    <span class="publisher-badge badge-hanlin">翰林版</span>
-                </div>
-                <div class="card-body">
-                    包含二位數加減法及「九九乘法表」基礎建立。小二數學重視幾何圖形與邏輯思考。
-                </div>
-                <div class="card-footer">
-                    <span>建議自修 + 評量</span>
-                    <a href="https://gooro.vip/" target="_blank" class="action-link">前往選購 →</a>
-                </div>
-            </div>
-
-            <!-- 生活 -->
-            <div class="card card-nani">
-                <div class="card-header">
-                    <div class="subject-info">
-                        <span class="subject-tag">跨領域 / 社會自然藝術整合</span>
-                        <span class="subject-name">生活課程</span>
-                    </div>
-                    <span class="publisher-badge badge-nani">南一版</span>
-                </div>
-                <div class="card-body">
-                    結合社會探究、基礎自然科學實驗及藝術美勞。教學活潑、涵蓋層面廣闊。
-                </div>
-                <div class="card-footer">
-                    <span>建議準備評量即可</span>
-                    <a href="https://gooro.vip/" target="_blank" class="action-link">前往選購 →</a>
-                </div>
-            </div>
+        <!-- Table Container -->
+        <div class="table-container">
+            <table>
+                <thead>
+                    <tr>
+                        <th style="width: 18%">科目</th>
+                        <th style="width: 18%">學校版本</th>
+                        <th style="width: 32%">建議購買教材</th>
+                        <th style="width: 32%">功能用途說明</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- 國語 -->
+                    <tr>
+                        <td class="subject-col">國語文</td>
+                        <td><span class="publisher-badge badge-kanghsuan">康軒版</span></td>
+                        <td>
+                            <div class="book-list">
+                                <span class="book-item">自修</span>
+                                <span class="book-item">評量</span>
+                                <span class="book-item">測驗卷</span>
+                            </div>
+                        </td>
+                        <td>課文觀念引導、生字筆順補充、每週課後練習、段考前模擬衝刺。</td>
+                    </tr>
+                    <!-- 數學 -->
+                    <tr>
+                        <td class="subject-col">數學</td>
+                        <td><span class="publisher-badge badge-hanlin">翰林版</span></td>
+                        <td>
+                            <div class="book-list">
+                                <span class="book-item">自修</span>
+                                <span class="book-item">評量</span>
+                                <span class="book-item">計算練習本</span>
+                            </div>
+                        </td>
+                        <td>幾何觀念引導、加減與九九乘法表熟練、課後練習。</td>
+                    </tr>
+                    <!-- 生活 -->
+                    <tr>
+                        <td class="subject-col">生活課程</td>
+                        <td><span class="publisher-badge badge-nani">南一版</span></td>
+                        <td>
+                            <div class="book-list">
+                                <span class="book-item">評量</span>
+                            </div>
+                        </td>
+                        <td>整合社會、自然、藝術領域的課後檢測，段考前複習即可。</td>
+                    </tr>
+                </tbody>
+            </table>
         </div>
 
-        <!-- Extra Note Section -->
-        <div class="info-section">
-            <h2 class="info-title">
-                💡 夠了教材顧問 (Gooro.vip) 的選書提醒
-            </h2>
-            <div class="info-content">
-                選購時切記依照<strong>「對應版本」</strong>選購，以下提供推薦的心得指引：
-                <ul class="info-list">
-                    <li><strong>國語與數學（重點科目）</strong>：建議購買<strong>自修</strong>（詳細觀念解析，家長輔導或預習好幫手）+ <strong>評量</strong>（單元考點練習，平時鞏固基礎）。</li>
-                    <li><strong>生活課程</strong>：平時主要依靠學校活動和探索，考試難度適中，買一本<strong>評量</strong>於段考前練習即可，不必買自修。</li>
-                    <li><strong>考前衝刺</strong>：若孩子在時間掌控或考試作答上需要訓練，可於考前一週選購<strong>測驗卷</strong>（即考卷格式）限時作答。</li>
-                </ul>
+        <!-- Summary Panel -->
+        <div class="summary-panel">
+            <div class="summary-title">
+                📊 購買品項總計 (統計用)
+            </div>
+            <div class="summary-grid">
+                <div class="summary-stat">
+                    <div class="stat-value">2 本</div>
+                    <div class="stat-label">自修 (國語、數學)</div>
+                </div>
+                <div class="summary-stat">
+                    <div class="stat-value">3 本</div>
+                    <div class="stat-label">評量 (國語、數學、生活)</div>
+                </div>
+                <div class="summary-stat">
+                    <div class="stat-value">1 份</div>
+                    <div class="stat-label">測驗卷 (國語)</div>
+                </div>
+                <div class="summary-stat">
+                    <div class="stat-value">1 本</div>
+                    <div class="stat-label">計算練習本 (數學)</div>
+                </div>
             </div>
         </div>
 
         <!-- Footer -->
         <footer>
-            <p>115學年度 潮音國小二年級教科書版本資料整理 • 對照自學專案</p>
+            <p>115學年度 二年級重點教材統計清單</p>
         </footer>
     </div>
 </body>
