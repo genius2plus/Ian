@@ -196,6 +196,12 @@
             font-weight: bold;
         }
 
+        .book-price {
+            color: #38bdf8;
+            font-size: 0.8rem;
+            font-weight: 600;
+        }
+
         /* Summary Panel */
         .summary-panel {
             background: rgba(255, 255, 255, 0.02);
@@ -203,6 +209,7 @@
             border-radius: 20px;
             padding: 1.8rem;
             backdrop-filter: blur(20px);
+            width: 100%;
         }
 
         .summary-title {
@@ -231,7 +238,7 @@
         }
 
         .stat-value {
-            font-size: 1.6rem;
+            font-size: 1.5rem;
             font-weight: 800;
             color: #38bdf8;
             margin-bottom: 0.25rem;
@@ -241,6 +248,17 @@
         .stat-label {
             font-size: 0.85rem;
             color: var(--text-secondary);
+        }
+
+        /* Highlighted Total Stat Card */
+        .summary-stat-total {
+            background: linear-gradient(135deg, rgba(56, 189, 248, 0.15) 0%, rgba(167, 139, 250, 0.15) 100%);
+            border: 1px solid rgba(167, 139, 250, 0.3);
+        }
+
+        .stat-value-total {
+            color: #a78bfa;
+            font-size: 1.5rem;
         }
 
         footer {
@@ -277,7 +295,7 @@
         <header>
             <div class="school-badge">桃園市大園區潮音國民小學</div>
             <h1>115 學年度二年級重點科目教材統計表</h1>
-            <p class="subtitle">為「邱御恩」整理的二年級自購教材統計清單，方便核對購書項目</p>
+            <p class="subtitle">為「邱御恩」整理的二年級自購教材統計清單，方便核對與估計書費</p>
         </header>
 
         <!-- Table Container -->
@@ -298,10 +316,10 @@
                         <td><span class="publisher-badge badge-kanghsuan">康軒版</span></td>
                         <td>
                             <div class="book-list">
-                                <span class="book-item">自修 (單價: $350~$450 | 估: $260~$340)</span>
-                                <span class="book-item">評量 (單價: $150~$230 | 估: $110~$170)</span>
-                                <span class="book-item">測驗卷 (單價: $120~$180 | 估: $90~$135)</span>
-                                <span class="book-item">生字語詞簿 (單價: $80~$120 | 估: $60~$90)</span>
+                                <span class="book-item">自修 <span class="book-price">($300~400)</span></span>
+                                <span class="book-item">評量 <span class="book-price">($140~180)</span></span>
+                                <span class="book-item">測驗卷 <span class="book-price">($100~130)</span></span>
+                                <span class="book-item">生字語詞簿 <span class="book-price">($80~100)</span></span>
                             </div>
                         </td>
                         <td>字詞觀念、生字筆順美字練習、單元與每週課後複習、段考前模擬衝刺。</td>
@@ -312,10 +330,10 @@
                         <td><span class="publisher-badge badge-hanlin">翰林版</span></td>
                         <td>
                             <div class="book-list">
-                                <span class="book-item">自修 (單價: $350~$450 | 估: $260~$340)</span>
-                                <span class="book-item">評量 (單價: $150~$230 | 估: $110~$170)</span>
-                                <span class="book-item">計算練習本 (單價: $80~$120 | 估: $60~$90)</span>
-                                <span class="book-item">測驗卷 (單價: $120~$180 | 估: $90~$135)</span>
+                                <span class="book-item">自修 <span class="book-price">($300~400)</span></span>
+                                <span class="book-item">評量 <span class="book-price">($140~180)</span></span>
+                                <span class="book-item">計算練習本 <span class="book-price">($80~100)</span></span>
+                                <span class="book-item">測驗卷 <span class="book-price">($100~130)</span></span>
                             </div>
                         </td>
                         <td>解題觀念、加減法與九九乘法熟練、段考前限時答題模擬。</td>
@@ -326,8 +344,8 @@
                         <td><span class="publisher-badge badge-nani">南一版</span></td>
                         <td>
                             <div class="book-list">
-                                <span class="book-item">評量 (單價: $150~$230 | 估: $110~$170)</span>
-                                <span class="book-item">測驗卷 (單價: $120~$180 | 估: $90~$135)</span>
+                                <span class="book-item">評量 <span class="book-price">($140~180)</span></span>
+                                <span class="book-item">測驗卷 <span class="book-price">($100~130)</span></span>
                             </div>
                         </td>
                         <td>整合社會、自然、藝術領域的課後檢測，段考前複習與考卷模擬。</td>
@@ -339,33 +357,29 @@
         <!-- Summary Panel -->
         <div class="summary-panel">
             <div class="summary-title">
-                📊 購買品項與書費估算 (常規通路約 75 折區間)
+                📊 購買品項與預算統計
             </div>
             <div class="summary-grid">
                 <div class="summary-stat">
                     <div class="stat-value">2 本</div>
-                    <div class="stat-label">自修 (國語、數學)</div>
-                    <div style="font-size: 0.85rem; margin-top: 0.25rem; color: #a78bfa;">定價: $700~$900 | 估算: $520~$680</div>
+                    <div class="stat-label">自修 (約 $600~800)</div>
                 </div>
                 <div class="summary-stat">
                     <div class="stat-value">3 本</div>
-                    <div class="stat-label">評量 (國、數、生)</div>
-                    <div style="font-size: 0.85rem; margin-top: 0.25rem; color: #a78bfa;">定價: $450~$690 | 估算: $330~$510</div>
+                    <div class="stat-label">評量 (約 $420~540)</div>
                 </div>
                 <div class="summary-stat">
                     <div class="stat-value">3 份</div>
-                    <div class="stat-label">測驗卷 (國、數、生)</div>
-                    <div style="font-size: 0.85rem; margin-top: 0.25rem; color: #a78bfa;">定價: $360~$540 | 估算: $270~$405</div>
+                    <div class="stat-label">測驗卷 (約 $300~390)</div>
                 </div>
                 <div class="summary-stat">
                     <div class="stat-value">2 本</div>
-                    <div class="stat-label">額外練習 (生字、計算)</div>
-                    <div style="font-size: 0.85rem; margin-top: 0.25rem; color: #a78bfa;">定價: $160~$240 | 估算: $120~$180</div>
+                    <div class="stat-label">額外練習 (約 $160~200)</div>
                 </div>
-            </div>
-            <div style="margin-top: 1.5rem; padding-top: 1rem; border-top: 1px solid rgba(255,255,255,0.05); text-align: right; font-size: 1.1rem; font-weight: bold;">
-                <span style="color: var(--text-secondary); margin-right: 1.5rem;">總定價區間: $1,670~$2,370</span>
-                <span style="color: #34d399; font-size: 1.3rem;">75折預估總書費: $1,240~$1,775 元</span>
+                <div class="summary-stat summary-stat-total">
+                    <div class="stat-value stat-value-total">$1,480 ~ $1,930</div>
+                    <div class="stat-label">預估總書費 (共 10 項)</div>
+                </div>
             </div>
         </div>
 
